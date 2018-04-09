@@ -10,8 +10,8 @@ namespace magui {
     Canvas(SDL_Renderer * renderer);
     void drawRectangle(Color color, int x, int y, int width, int height);
     void refresh();
-  private:
     SDL_Renderer * renderer;
+  private:
   };
 }
 
