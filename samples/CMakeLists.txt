@@ -1,7 +1,6 @@
 add_executable(text-editor text-editor/main.cpp)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -lSDL2 -lSDL2_ttf -g -O0")
-target_link_libraries(text-editor oggy)
+target_link_libraries(text-editor oggy SDL2 SDL2_ttf)
 target_include_directories(text-editor PUBLIC ${CMAKE_SOURCE_DIR})
 
 add_custom_target(
