@@ -7,7 +7,8 @@
 namespace oggy {
     class Font {
     public:
-      Font(std::string& path, int size);
+      Font(std::string path, int size);
+      ~Font();
     private:
       std::string path;
       TTF_Font * font;

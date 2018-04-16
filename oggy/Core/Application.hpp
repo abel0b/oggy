@@ -5,7 +5,6 @@
 #include "Window.hpp"
 #include "Document.hpp"
 #include "Canvas.hpp"
-#include "ResourceManager.hpp"
 
 namespace oggy {
   class Application {

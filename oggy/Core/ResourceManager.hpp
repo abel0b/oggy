@@ -3,6 +3,7 @@
 
 #include <map>
 #include <string>
+#include <iostream>
 
 namespace oggy {
   template<class Resource>
@@ -10,9 +11,9 @@ namespace oggy {
   public:
     ResourceManager();
     ~ResourceManager();
-    void load(std::string& id, Resource resource);
-    void unload(std::string& id);
-    void get(std::string& id);
+    void load(std::string id, Resource resource);
+    void unload(std::string id);
+    void get(std::string id);
 
   private:
     std::map<std::string, Resource> resources;
@@ -25,21 +26,26 @@ namespace oggy {
 
   template<class Resource>
   ResourceManager<Resource>::~ResourceManager() {
-
+    std::cout << "i die" << std::endl;
+    for(auto it = this->resources.begin(); it != this->resources.end(); ++it) {
+      std::cout << "fififi" << it->first << std::endl;
+      //this->unload(it->first);
+    }
   }
 
   template<class Resource>
-  void ResourceManager<Resource>::load(std::string& id, Resource resource) {
+  void ResourceManager<Resource>::load(std::string id, Resource resource) {
     this->resources[id] = resource;
   }
 
   template<class Resource>
-  void ResourceManager<Resource>::unload(std::string& id) {
+  void ResourceManager<Resource>::unload(std::string id) {
+    delete this->resources[id];
     this->resources.erase(id);
   }
 
   template<class Resource>
-  void ResourceManager<Resource>::get(std::string& id) {
+  void ResourceManager<Resource>::get(std::string id) {
     return this->resources[id];
   }
 }

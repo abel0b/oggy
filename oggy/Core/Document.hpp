@@ -3,6 +3,8 @@
 
 #include "Node.hpp"
 #include "Event.hpp"
+#include "ResourceManager.hpp"
+#include "Font.hpp"
 
 namespace oggy {
   class Document {
@@ -13,6 +15,7 @@ namespace oggy {
     void render();
     Node * root;
   private:
+    ResourceManager<Font> fonts;
   };
 }
 

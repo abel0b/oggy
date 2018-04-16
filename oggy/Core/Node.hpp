@@ -6,7 +6,6 @@
 
 #include "Canvas.hpp"
 #include "Event.hpp"
-#include "ResourceManager.hpp"
 #include "Font.hpp"
 
 namespace oggy {
@@ -60,7 +59,6 @@ namespace oggy {
       bool hidden = false;
       std::vector <Node*> children;
       Canvas * canvas;
-      ResourceManager<class Font> fonts;
     protected:
       Node * parent;
   };
