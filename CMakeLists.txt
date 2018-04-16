@@ -3,6 +3,7 @@ set (CMAKE_CXX_STANDARD 11)
 project(oggy)
 
 enable_testing()
-add_subdirectory(oggy)
+include_directories(include)
+add_subdirectory(src)
 add_subdirectory(tests)
 add_subdirectory(samples)

@@ -1,8 +1,8 @@
 #ifndef OGGY_ROW_LAYOUT_HPP
 #define OGGY_ROW_LAYOUT_HPP
 
-#include "../Core/Node.hpp"
-#include "../Core/Event.hpp"
+#include "Node.hpp"
+#include "Event.hpp"
 
 namespace oggy {
 

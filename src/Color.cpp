@@ -1,5 +1,5 @@
 #include <stdint.h>
-#include "Color.hpp"
+#include "oggy/Color.hpp"
 
 oggy::Color::Color() {
   this->r = 255;

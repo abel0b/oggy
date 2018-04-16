@@ -1,11 +1,11 @@
 #include <iostream>
 
-#include "oggy/Core/Window.hpp"
-#include "oggy/Core/Application.hpp"
-#include "oggy/Core/Color.hpp"
-#include "oggy/Components/ColumnLayout.hpp"
-#include "oggy/Components/RowLayout.hpp"
-#include "oggy/Components/Heading.hpp"
+#include "oggy/Window.hpp"
+#include "oggy/Application.hpp"
+#include "oggy/Color.hpp"
+#include "oggy/ColumnLayout.hpp"
+#include "oggy/RowLayout.hpp"
+#include "oggy/Heading.hpp"
 
 int main() {
   oggy::Application * app = new oggy::Application();

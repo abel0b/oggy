@@ -1,4 +1,4 @@
-#include "Canvas.hpp"
+#include "oggy/Canvas.hpp"
 #include <iostream>
 
 oggy::Canvas::Canvas(SDL_Renderer * renderer) {

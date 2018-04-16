@@ -1,4 +1,4 @@
-#include "Window.hpp"
+#include "oggy/Window.hpp"
 
 oggy::Window::Window(std::string title, int width, int height) {
   TTF_Init();

@@ -1,5 +1,5 @@
-#include "ColumnLayout.hpp"
-#include "../Core/Color.hpp"
+#include "oggy/ColumnLayout.hpp"
+#include "oggy/Color.hpp"
 #include <iostream>
 #include <SDL2/SDL.h>
 

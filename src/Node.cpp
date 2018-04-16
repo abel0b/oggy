@@ -1,6 +1,6 @@
-#include "Node.hpp"
+#include "oggy/Node.hpp"
 #include <iostream>
-#include "Canvas.hpp"
+#include "oggy/Canvas.hpp"
 
 oggy::Node::Node() {
 

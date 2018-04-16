@@ -2,7 +2,7 @@
 #define OGGY_HEADING_HPP
 
 #include <iostream>
-#include "../Core/Node.hpp"
+#include "Node.hpp"
 
 namespace oggy {
   class Heading : public Node {

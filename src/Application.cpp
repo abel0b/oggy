@@ -1,4 +1,4 @@
-#include "Application.hpp"
+#include "oggy/Application.hpp"
 #include <SDL2/SDL.h>
 
 oggy::Application::Application() {

@@ -1,4 +1,4 @@
-#include "Heading.hpp"
+#include "oggy/Heading.hpp"
 #include <SDL2/SDL_ttf.h>
 
 oggy::Heading::Heading(std::string text) {

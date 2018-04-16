@@ -1,9 +1,9 @@
 #ifndef OGGY_COLUMN_LAYOUT_HPP
 #define OGGY_COLUMN_LAYOUT_HPP
 
-#include "../Core/Node.hpp"
-#include "../Core/Event.hpp"
-#include "../Core/Color.hpp"
+#include "Node.hpp"
+#include "Event.hpp"
+#include "Color.hpp"
 
 namespace oggy {
 
