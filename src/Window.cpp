@@ -26,4 +26,5 @@ void oggy::Window::render() {
 
 
 oggy::Window::~Window() {
+
 }

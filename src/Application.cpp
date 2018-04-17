@@ -5,8 +5,9 @@ oggy::Application::Application() {
   SDL_Init(SDL_INIT_VIDEO);
   TTF_Init();
   oggy::Window * window = new oggy::Window("My Window", 1280, 720);
-  this->canvas = window->canvas;
   this->document = new oggy::Document(window);
+  this->canvas = window->canvas;
+  this->canvas->setFontManager(&this->document->fonts);
 }
 
 oggy::Application::~Application() {

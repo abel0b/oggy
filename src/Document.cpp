@@ -6,7 +6,7 @@
 
 oggy::Document::Document(oggy::Node * root) {
   this->root = root;
-  this->fonts.load("font/main", new oggy::Font("/usr/share/fonts/TTF/DejaVuSerif.ttf", 16));
+  this->fonts.load("main", new oggy::Font("/usr/share/fonts/TTF/DejaVuSerif.ttf", 16));
 }
 
 oggy::Resource * oggy::Document::resource(std::string& id) {

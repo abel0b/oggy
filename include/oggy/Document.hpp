@@ -5,7 +5,6 @@
 #include "Event.hpp"
 #include "ResourceManager.hpp"
 #include "Font.hpp"
-#include "Resource.hpp"
 
 namespace oggy {
   class Document {
@@ -16,8 +15,8 @@ namespace oggy {
     void updateState(Event * event);
     void render();
     Node * root;
-  private:
     ResourceManager<Font> fonts;
+  private:
   };
 }
 
