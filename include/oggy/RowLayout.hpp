@@ -8,8 +8,8 @@ namespace oggy {
 
   class RowLayout : public Node {
   public:
-    RowLayout();
-    RowLayout(int height);
+    RowLayout(oggy::Node * parent);
+    RowLayout(oggy::Node * parent, int height);
     void render();
     void updateState(Event * event);
     void setBackground(Color color);

@@ -3,7 +3,8 @@
 #include <iostream>
 #include <SDL2/SDL.h>
 
-oggy::RowLayout::RowLayout(int height) {
+oggy::RowLayout::RowLayout(oggy::Node * parent, int height):
+  oggy::Node(parent) {
   this->width = -1;
   this->height = height;
   this->growX = true;
@@ -16,7 +17,8 @@ oggy::RowLayout::RowLayout(int height) {
   this->position = POSITION_AUTO;
 }
 
-oggy::RowLayout::RowLayout() {
+oggy::RowLayout::RowLayout(oggy::Node * parent):
+  oggy::Node(parent) {
   this->width = -1;
   this->height = -1;
   this->growX = true;

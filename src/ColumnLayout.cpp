@@ -3,8 +3,9 @@
 #include <iostream>
 #include <SDL2/SDL.h>
 
-oggy::ColumnLayout::ColumnLayout():
-  background(255,0,0,255) {
+oggy::ColumnLayout::ColumnLayout(oggy::Node * parent):
+  background(255,0,0,255),
+  oggy::Node(parent) {
   this->width = -1;
   this->height = -1;
   this->growX = true;
@@ -17,8 +18,9 @@ oggy::ColumnLayout::ColumnLayout():
   this->position = POSITION_AUTO;
 }
 
-oggy::ColumnLayout::ColumnLayout(int width):
-  background(255,0,0,255) {
+oggy::ColumnLayout::ColumnLayout(oggy::Node * parent, int width):
+  background(255,0,0,255),
+  oggy::Node(parent) {
   this->width = width;
   this->height = -1;
   this->growX = false;

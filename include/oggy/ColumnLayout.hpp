@@ -9,8 +9,8 @@ namespace oggy {
 
   class ColumnLayout : public Node {
   public:
-    ColumnLayout();
-    ColumnLayout(int width);
+    ColumnLayout(oggy::Node * parent);
+    ColumnLayout(oggy::Node * parent, int width);
     void render();
     void updateState(Event * event);
     void setBackground(Color color);

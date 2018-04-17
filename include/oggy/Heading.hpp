@@ -7,10 +7,9 @@
 namespace oggy {
   class Heading : public Node {
   public:
-    Heading(std::string text);
+    Heading(oggy::Node * parent, std::string text);
     void updateState(Event * eevnt);
     void render();
-    std::string text;
   };
 }
 

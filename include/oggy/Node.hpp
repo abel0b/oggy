@@ -33,6 +33,7 @@ namespace oggy {
   class Node {
     public:
       Node();
+      Node(oggy::Node * parent);
       virtual ~Node();
       Node(Canvas * canvas);
       void addChild(Node * node);

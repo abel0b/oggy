@@ -10,7 +10,6 @@ void oggy::Canvas::setFontManager(oggy::ResourceManager<Font> * fonts) {
 }
 
 void oggy::Canvas::drawRectangle(oggy::Color color, int x, int y, int width, int height) {
-  //std::cout << "ddrawing rectangle " << std::endl;
   SDL_SetRenderDrawColor(this->renderer, color.r, color.g, color.b, color.a);
   SDL_Rect rect;
   rect.x = x;

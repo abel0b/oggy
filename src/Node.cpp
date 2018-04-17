@@ -6,6 +6,10 @@ oggy::Node::Node() {
 
 }
 
+oggy::Node::Node(oggy::Node * parent) {
+  parent->addChild(this);
+}
+
 oggy::Node::~Node() {
 
 }
