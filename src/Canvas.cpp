@@ -6,7 +6,7 @@ oggy::Canvas::Canvas(SDL_Renderer * renderer) {
 }
 
 void oggy::Canvas::drawRectangle(Color color, int x, int y, int width, int height) {
-  std::cout << "ddrawing rectangle " << std::endl;
+  //std::cout << "ddrawing rectangle " << std::endl;
   SDL_SetRenderDrawColor(this->renderer, color.r, color.g, color.b, color.a);
   SDL_Rect rect;
   rect.x = x;

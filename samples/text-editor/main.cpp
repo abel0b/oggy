@@ -35,7 +35,6 @@ int main() {
     main->addChild(text);
   app->document->root->addChild(statusbar);
 
-
   app->run();
 
   delete app;

@@ -1,8 +1,6 @@
 #include "oggy/Window.hpp"
 
 oggy::Window::Window(std::string title, int width, int height) {
-  TTF_Init();
-  SDL_Init(SDL_INIT_VIDEO);
   this->SDLWindow = SDL_CreateWindow(title.c_str(), SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, width, height, SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE );
   this->SDLRenderer = SDL_CreateRenderer(this->SDLWindow, -1, SDL_RENDERER_ACCELERATED);
   this->canvas = new oggy::Canvas(this->SDLRenderer);
@@ -21,13 +19,11 @@ void oggy::Window::updateState(Event * event) {
 }
 
 void oggy::Window::render() {
-  std::cout << "render win" << std::endl;
+  //std::cout << "render win" << std::endl;
   SDL_SetRenderDrawColor(this->SDLRenderer, 255,255,255,255);
   SDL_RenderClear(this->SDLRenderer);
 }
 
 
 oggy::Window::~Window() {
-  TTF_Quit();
-  SDL_Quit();
 }

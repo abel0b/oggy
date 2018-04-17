@@ -30,7 +30,7 @@ oggy::RowLayout::RowLayout() {
 }
 
 void oggy::RowLayout::render() {
-  std::cout << "render hl" << std::endl;
+  //std::cout << "render hl" << std::endl;
   this->canvas->drawRectangle(this->background, this->calculatedX, this->calculatedY, this->calculatedWidth, (this->growY)? this->calculatedHeight : this->height);
   /*SDL_SetRenderDrawColor(this->renderer, 210,210,210,255);
   SDL_Rect rectangle = {this->x, this->y, this->width, this->height};

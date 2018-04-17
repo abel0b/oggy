@@ -3,15 +3,17 @@
 
 #include <string>
 #include <SDL2/SDL_ttf.h>
+#include "Resource.hpp"
 
 namespace oggy {
-    class Font {
+    class Font : public Resource {
     public:
+      Font();
       Font(std::string path, int size);
       ~Font();
+      TTF_Font * font = NULL;
     private:
       std::string path;
-      TTF_Font * font;
     };
 }
 

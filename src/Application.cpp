@@ -2,6 +2,8 @@
 #include <SDL2/SDL.h>
 
 oggy::Application::Application() {
+  SDL_Init(SDL_INIT_VIDEO);
+  TTF_Init();
   oggy::Window * window = new oggy::Window("My Window", 1280, 720);
   this->canvas = window->canvas;
   this->document = new oggy::Document(window);
@@ -9,11 +11,13 @@ oggy::Application::Application() {
 
 oggy::Application::~Application() {
   delete this->document;
+  TTF_Quit();
+  SDL_Quit();
 }
 
 void oggy::Application::run() {
   int FPS = 30;
-  int frameTime = 1000/FPS;
+  int frameTime = 1000 / FPS;
   int ticks;
   SDL_Event event;
   oggy::Event * ev;

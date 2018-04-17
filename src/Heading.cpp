@@ -17,11 +17,11 @@ oggy::Heading::Heading(std::string text) {
 
 
 void oggy::Heading::render() {
-  std::cout << "render " << this->text << "boxx\n" << std::endl;
+  //std::cout << "render " << this->text << "boxx\n" << std::endl;
   oggy::Color blue(20,20,255,255);
   this->canvas->drawRectangle(blue, this->calculatedX, this->calculatedY, this->calculatedWidth, this->height);
 
-  TTF_Font * cantarell = TTF_OpenFont("/usr/share/fonts/TTF/DejaVuSerif.ttf", 16);
+  /*TTF_Font * cantarell = TTF_OpenFont("/usr/share/fonts/TTF/DejaVuSerif.ttf", 16);
   SDL_Color fg = {0,0,0,255};
   SDL_Color bg = {255,255,255,255};
   SDL_Surface * txt = TTF_RenderText_Shaded(cantarell, this->text.c_str(), fg, bg);
@@ -36,9 +36,9 @@ void oggy::Heading::render() {
   SDL_RenderCopy(this->canvas->renderer, texture, NULL, &r);
 
   TTF_CloseFont(cantarell);
-  SDL_DestroyTexture(texture);
+  SDL_DestroyTexture(texture);*/
 }
 
 void oggy::Heading::updateState(Event * event) {
-  std::cout << "okok"<< std::endl;
+  //std::cout << "okok"<< std::endl;
 }

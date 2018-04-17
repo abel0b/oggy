@@ -32,8 +32,8 @@ oggy::ColumnLayout::ColumnLayout(int width):
 }
 
 void oggy::ColumnLayout::render() {
-  std::cout << "render vl" << std::endl;
-  std::cout << this->calculatedX << " " << this->calculatedY << " " << this->width << " " << this->calculatedHeight << std::endl;
+  //std::cout << "render vl" << std::endl;
+  //std::cout << this->calculatedX << " " << this->calculatedY << " " << this->width << " " << this->calculatedHeight << std::endl;
   this->canvas->drawRectangle(this->background, this->calculatedX, this->calculatedY, (this->growX)? this->calculatedWidth : this->width, this->calculatedHeight);
   /*SDL_SetRenderDrawColor(this->renderer, 210,210,210,255);
   SDL_Rect rectangle = {this->x, this->y, this->width, this->height};

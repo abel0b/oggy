@@ -1,12 +1,16 @@
 #include "oggy/Document.hpp"
+#include "oggy/Log.hpp"
 
 #include <queue>
 #include <iostream>
 
 oggy::Document::Document(oggy::Node * root) {
   this->root = root;
-  oggy::Font mainFont = oggy::Font(std::string("/usr/share/fonts/TTF/DejaVuSerif.ttf"), 16);
-  //this->fonts.load("main", mainFont);
+  this->fonts.load("font/main", new oggy::Font("/usr/share/fonts/TTF/DejaVuSerif.ttf", 16));
+}
+
+oggy::Resource * oggy::Document::resource(std::string& id) {
+  return this->fonts.get(id);
 }
 
 oggy::Document::~Document() {
@@ -38,7 +42,10 @@ void oggy::Document::updateState(Event * event) {
 }
 
 void oggy::Document::render() {
-  std::cout << "=== begin render" << std::endl;
+  #ifdef DEBUG_RENDER
+  Log.debug("=== begin render")
+  #endif
+
   std::queue<oggy::Node *> queue;
   queue.push(this->root);
   oggy::Node * node;
@@ -48,8 +55,12 @@ void oggy::Document::render() {
     int nodeHeight = (node->growY)? node->calculatedHeight : node->height;
     int nodeX = (node->position == POSITION_ABSOLUTE)? node->x : node->calculatedX;
     int nodeY = (node->position == POSITION_ABSOLUTE)? node->y : node->calculatedY;
-    std::cout << "w " << nodeWidth << " h " << nodeHeight << std::endl;
-    std::cout << "x " << nodeX << " y " << nodeY << std::endl;
+
+    #ifdef DEBUG_RENDER
+    Log.debug("w " << nodeWidth << " h " << nodeHeight)
+    Log.debug("x " << nodeX << " y " << nodeY)
+    #endif
+
     queue.pop();
     switch (node->direction) {
       case DIRECTION_ROW:
@@ -59,11 +70,11 @@ void oggy::Document::render() {
         for (std::vector<oggy::Node*>::iterator n = node->children.begin(); n != node->children.end(); ++n) {
           queue.push(*n);
           if ((*n)->growX) {
-            nXGrowable++;
           }
           else {
             availableWidth -= (*n)->width;
           }
+            nXGrowable++;
         }
 
         int width=-1;
@@ -126,5 +137,7 @@ void oggy::Document::render() {
     }
     node->render();
   }
-  std::cout << "=== end render" << std::endl;
+  #ifdef DEBUG_RENDER
+  Log.debug("=== end render")
+  #endif
 }
