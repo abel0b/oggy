@@ -6,7 +6,7 @@ target_link_libraries(text-editor oggy)
 
 add_custom_target(
   run-text-editor
-  COMMAND ./samples/text-editor
-  DEPENDS ./samples/text-editor
+  COMMAND ./examples/text-editor
+  DEPENDS ./examples/text-editor
   WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
 )
