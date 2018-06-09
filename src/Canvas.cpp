@@ -21,8 +21,8 @@ void oggy::Canvas::drawRectangle(oggy::Color color, int x, int y, int width, int
 
 void oggy::Canvas::drawText(Color color, int x, int y, const std::string& text) {
   SDL_Color fg = {color.r,color.g,color.b,color.a};
-  TTF_Font * cantarell = TTF_OpenFont("/usr/share/fonts/TTF/DejaVuSerif.ttf", 18);
-  SDL_Surface * textSurface = TTF_RenderText_Blended(cantarell, text.c_str(), fg);
+  TTF_Font * main = this->fonts->get("main")->font;
+  SDL_Surface * textSurface = TTF_RenderText_Blended(main, text.c_str(), fg);
   SDL_Texture * textTexture = SDL_CreateTextureFromSurface(this->renderer, textSurface);
   SDL_FreeSurface(textSurface);
 
@@ -31,7 +31,6 @@ void oggy::Canvas::drawText(Color color, int x, int y, const std::string& text) 
   SDL_Rect r = { x, y, texW, texH };
   SDL_RenderCopy(this->renderer, textTexture, NULL, &r);
   SDL_DestroyTexture(textTexture);
-  TTF_CloseFont(cantarell);
 }
 
 void oggy::Canvas::refresh() {
